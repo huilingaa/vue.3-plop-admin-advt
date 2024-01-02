@@ -1,17 +1,58 @@
-<script setup>
-
+<script lang="ts" setup>
+  import { defineComponent, onMounted, reactive, computed, watch, ref } from
+  'vue' onMounted(() => {})
   {{componentName}}
+  const state = reactive({})
+
 </script>
 
 <template>
   <div>
-    <page-header title="{{cname}}" />
-    <page-main>
-      页面内容区域
-    </page-main>
+    {{!-- <a-table :row-selection="{
+                  selectedRowKeys: state.selectedRowKeys,
+                  onChange: onSelectChange
+                }" :pagination="false" :scroll="{ x: 1500 }" :columns="userColumns" :rowKey="record => record.id"
+      :data-source="state.listArray">
+      <template #bodyCell="{ record, column }">
+        <template v-if="column.key === 'operation'">
+          <div class="flexx">
+            <div @click="showUserDetailDrawer(record)">
+              <a>详情</a>
+            </div>
+            <div @click="open.value = true">
+              <a-dropdown>
+                <a class="ant-dropdown-link" style="margin-left: 20px" @click.prevent>
+                  ...
+                </a>
+                <template #overlay>
+                  <a-menu>
+                    <a-menu-item>
+                      <div @click="deleteUserInfo(record)">
+                        暂停账号
+                      </div>
+                    </a-menu-item>
+                    <a-menu-item>
+                      <div @click="editDeptTable('table', record)">
+                        变更部门
+                      </div>
+                      <!-- <a href="javascript:;"></a> -->
+                    </a-menu-item>
+                    <a-menu-item>
+                      <div @click="deleteUserInfo(record)">置顶</div>
+                    </a-menu-item>
+                  </a-menu>
+                </template>
+              </a-dropdown>
+            </div>
+          </div>
+        </template>
+        <template v-if="column.dataIndex === 'state'">
+          {{ stateFind(record.state) }}
+        </template>
+      </template>
+    </a-table> --}}
   </div>
 </template>
 
-<style lang="scss" scoped>
-  // scss
+<style lang="less" scoped>
 </style>
